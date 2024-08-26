@@ -81,21 +81,23 @@ def process_case(case_number):
     c2 = case['c2']
     
     if case_number == 4:
-       find_message_case_4(c1=c1, c2=c2, p=p) 
+        find_message_case_4(c1=c1, c2=c2, p=p) 
     else:   
         x = find_x(g=generator, public_key=public_key, p=p)
-        print("x =", x)
+        # print("x =", x)
         find_message(c1=c1, c2=c2, p=p, x=x)
 
     
     for j in range(0, 1024):
         check =  ( generator ** (j) ) %  p
         if check == c1:
-            print("y=" , end="")
-            print(check)
+            # print("y=" , end="")
+            # print(check)
             break
-    else:
-        print("y not found")
+    # else:
+        # print("y not found")
 
-# Example usage: Process case 5
-process_case(1)
+# process_case(1)
+
+number = input("Enter the Number of Scenario: ")
+process_case(int(number))
